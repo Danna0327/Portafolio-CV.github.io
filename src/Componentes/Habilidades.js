@@ -8,7 +8,7 @@ function Habilidades() {
     { nombre: 'SQL', nivel: 65 },
   ];
 
-  const herramientas = ['Git', 'Node.js', 'Firebase', 'Figma'];
+  const herramientas = ['Git', 'Node.js', 'SQL', 'Postgres', 'Figma', 'React.js'];
 
   const metodologias = [
     'Metodologías Ágiles (Scrum)',

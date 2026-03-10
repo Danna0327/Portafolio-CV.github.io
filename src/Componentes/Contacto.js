@@ -130,7 +130,7 @@ function Contacto() {
             <div style={estilos.iconoCorreo}>📬</div>
             <h2 style={estilos.titulo}>Ponte en contacto</h2>
             <p style={estilos.descripcion}>
-              ¿Interesado en colaborar o contratar?<br />
+              ¿Interesado en contratar?<br />
               Contáctame a través de cualquiera de estos canales.
             </p>
             <div style={estilos.canales}>
@@ -180,7 +180,7 @@ function Contacto() {
       </section>
 
       <footer style={estilos.footer}>
-        © 2024 Portafolio de Danna Montece · Todos los derechos reservados ·{' '}
+        © 2026 Portafolio de Danna Montece · Todos los derechos reservados ·{' '}
         <a href="https://github.com/Danna0327" target="_blank" rel="noreferrer" style={{ color: '#ff2d78' }}>
           GitHub
         </a>

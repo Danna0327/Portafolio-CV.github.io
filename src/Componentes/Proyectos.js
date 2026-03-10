@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import portafolio from '../Recursos/Imagenes-Proyectos/Portafolio.png';
 import mathspin from '../Recursos/Imagenes-Proyectos/mathspin.png';
 import proyectoWeb from '../Recursos/Imagenes-Proyectos/proyecto-web.png';
 
@@ -15,8 +16,8 @@ const proyectos = [
   },
   {
     id: 2,
-    titulo: 'TIC-InnovaEdu',
-    descripcion: 'Aplicación de herramientas tecnológicas de vanguardia para fomentar la innovación en procesos educativos contemporáneos.',
+    titulo: 'AbastoGest',
+    descripcion: 'Sistema de gestión web diseñado para el negocio familiar de abarrotes.',
     imagen: proyectoWeb,
     tags: ['React', 'TIC'],
     github: 'https://github.com/Danna0327',
@@ -26,7 +27,7 @@ const proyectos = [
     id: 3,
     titulo: 'Portafolio React',
     descripcion: 'Sitio web personal desarrollado con React para mostrar mi trayectoria, habilidades y proyectos en el campo de la computación.',
-    imagen: null,
+    imagen: portafolio,
     tags: ['React', 'CSS'],
     github: 'https://github.com/Danna0327',
     demo: '#',

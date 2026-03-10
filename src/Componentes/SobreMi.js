@@ -136,6 +136,7 @@ function SobreMi() {
 
   return (
     <>
+      {/* ── Sobre mí ── */}
       <section id="sobre-mi" style={estilos.seccion}>
         <div style={estilos.grid}>
           <div>
@@ -157,6 +158,7 @@ function SobreMi() {
               ámbito educativo y tecnológico.
             </p>
           </div>
+
           <div>
             <div style={estilos.valoresTitulo}>
               <span style={estilos.estrella}>★</span> Valores Fundamentales
@@ -174,13 +176,16 @@ function SobreMi() {
         </div>
       </section>
 
+      {/* ── Educación y Experiencia ── */}
       <section style={estilos.educacionExperiencia}>
         <div style={estilos.gridDoble}>
+
+          {/* Educación */}
           <div>
             <h3 style={estilos.secTitulo}>Educación</h3>
             <div style={estilos.timelineItem}>
               <div style={estilos.dot}></div>
-              <div style={estilos.fecha}>2022 - Presente</div>
+              <div style={estilos.fecha}>2023 - Presente</div>
               <div style={estilos.itemTitulo}>Ingeniería en Computación</div>
               <div style={estilos.itemSubtitulo}>[Nombre de tu Universidad]</div>
               <div style={estilos.itemDesc}>
@@ -190,9 +195,13 @@ function SobreMi() {
               </div>
             </div>
           </div>
+
+          {/* Experiencia */}
+          <div>
+            <h3 style={estilos.secTitulo}>Experiencia</h3>
             <div style={estilos.timelineItem}>
               <div style={estilos.dot}></div>
-              <div style={estilos.fecha}>2025 - 2026</div>
+              <div style={estilos.fecha}>2026 - 2026</div>
               <div style={estilos.itemTitulo}>Asistente de Investigación Académica</div>
               <div style={estilos.itemSubtitulo}>Proyecto de Innovación TIC</div>
               <div style={estilos.itemDesc}>
@@ -201,6 +210,7 @@ function SobreMi() {
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </>

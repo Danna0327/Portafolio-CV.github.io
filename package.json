@@ -2,7 +2,6 @@
   "name": "portafolio-cv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Danna0327.github.io/Portafolio-CV.github.io",
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

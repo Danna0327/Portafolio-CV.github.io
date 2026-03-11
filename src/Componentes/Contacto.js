@@ -41,7 +41,7 @@ function Contacto() {
               <h2 style={{ fontSize: '1.6rem', fontWeight: '900' }}>Ponte en contacto</h2>
             </div>
             <p style={{ color: '#64748b', lineHeight: 1.8, fontSize: '0.9rem', marginBottom: '28px' }}>
-              ¿Interesado en colaborar o contratar? Contáctame a través de cualquiera de estos canales.
+              ¿Interesado en contratar? Contáctame a través de cualquiera de estos canales.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <a href="mailto:montecedanna024@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#94a3b8', fontSize: '0.9rem', textDecoration: 'none' }}>
@@ -89,7 +89,7 @@ function Contacto() {
 
         {/* Footer bottom */}
         <div style={{ marginTop: '60px', paddingTop: '24px', borderTop: '1px solid rgba(30,41,59,0.5)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#475569', fontSize: '0.8rem', flexWrap: 'wrap', gap: '12px' }}>
-          <p>© 2024 Portafolio de Danna Montece. Todos los derechos reservados.</p>
+          <p>© 2026 Portafolio de Danna Montece. Todos los derechos reservados.</p>
           <div style={{ display: 'flex', gap: '24px' }}>
             <button onClick={() => {}} style={{ color: '#475569', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontFamily: 'Inter, sans-serif' }}
               onMouseEnter={e => e.target.style.color = '#ff0080'}

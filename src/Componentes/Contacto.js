@@ -91,12 +91,12 @@ function Contacto() {
         <div style={{ marginTop: '60px', paddingTop: '24px', borderTop: '1px solid rgba(30,41,59,0.5)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#475569', fontSize: '0.8rem', flexWrap: 'wrap', gap: '12px' }}>
           <p>© 2024 Portafolio de Danna Montece. Todos los derechos reservados.</p>
           <div style={{ display: 'flex', gap: '24px' }}>
-            <a href="#" style={{ color: '#475569', textDecoration: 'none' }}
+            <button onClick={() => {}} style={{ color: '#475569', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontFamily: 'Inter, sans-serif' }}
               onMouseEnter={e => e.target.style.color = '#ff0080'}
-              onMouseLeave={e => e.target.style.color = '#475569'}>Política de Privacidad</a>
-            <a href="#" style={{ color: '#475569', textDecoration: 'none' }}
+              onMouseLeave={e => e.target.style.color = '#475569'}>Política de Privacidad</button>
+            <button onClick={() => {}} style={{ color: '#475569', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontFamily: 'Inter, sans-serif' }}
               onMouseEnter={e => e.target.style.color = '#ff0080'}
-              onMouseLeave={e => e.target.style.color = '#475569'}>Términos de Servicio</a>
+              onMouseLeave={e => e.target.style.color = '#475569'}>Términos de Servicio</button>
           </div>
         </div>
       </div>

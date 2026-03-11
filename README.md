@@ -9,7 +9,7 @@
 
 ## ✨ Vista previa
 
-![Portafolio Preview](src/Recursos/Portafolio.png)
+![Portafolio Preview](src/Recursos/Imagenes-Proyectos/Portafolio.png)
 
 ---
 

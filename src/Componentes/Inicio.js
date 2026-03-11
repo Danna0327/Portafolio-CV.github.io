@@ -2,170 +2,104 @@ import React from 'react';
 import Perfil from '../Recursos/Perfil.jpg';
 
 function Inicio() {
-  const estilos = {
-    seccion: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '140px 8% 80px',
-      minHeight: '100vh',
-      background: '#0d0d0d',
-      gap: '40px',
-    },
-    contenido: {
-      maxWidth: '52%',
-    },
-    etiqueta: {
-      color: '#ff2d78',
-      fontSize: '11px',
-      letterSpacing: '3px',
-      textTransform: 'uppercase',
-      marginBottom: '20px',
-      fontWeight: '600',
-    },
-    titulo: {
-      fontSize: '3.2rem',
-      fontWeight: '800',
-      lineHeight: 1.15,
-      marginBottom: '16px',
-      color: '#ffffff',
-    },
-    tituloRosa: {
-      color: '#ff2d78',
-      display: 'block',
-    },
-    subtitulo: {
-      color: '#aaa',
-      fontSize: '1.1rem',
-      marginBottom: '20px',
-      fontWeight: '400',
-    },
-    descripcion: {
-      color: '#999',
-      lineHeight: 1.8,
-      fontSize: '0.95rem',
-      marginBottom: '28px',
-      maxWidth: '480px',
-    },
-    tags: {
-      display: 'flex',
-      gap: '10px',
-      flexWrap: 'wrap',
-      marginBottom: '36px',
-    },
-    tag: {
-      border: '1px solid #333',
-      padding: '5px 14px',
-      borderRadius: '20px',
-      fontSize: '12px',
-      color: '#bbb',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '6px',
-    },
-    tagDot: {
-      width: '6px',
-      height: '6px',
-      borderRadius: '50%',
-      background: '#ff2d78',
-    },
-    botones: {
-      display: 'flex',
-      gap: '16px',
-      flexWrap: 'wrap',
-    },
-    botonPrimario: {
-      background: '#ff2d78',
-      color: '#fff',
-      padding: '13px 30px',
-      borderRadius: '6px',
-      fontWeight: 'bold',
-      fontSize: '0.9rem',
-      border: 'none',
-      cursor: 'pointer',
-    },
-    botonSecundario: {
-      border: '1px solid #444',
-      color: '#fff',
-      padding: '13px 30px',
-      borderRadius: '6px',
-      fontSize: '0.9rem',
-      background: 'transparent',
-      cursor: 'pointer',
-    },
-    imagenWrapper: {
-      width: '280px',
-      height: '340px',
-      borderRadius: '16px',
-      overflow: 'hidden',
-      border: '2px solid #ff2d78',
-      flexShrink: 0,
-      position: 'relative',
-    },
-    imagen: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-    },
-    codigoCard: {
-      position: 'absolute',
-      bottom: '-20px',
-      left: '-30px',
-      background: '#1a1a2e',
-      border: '1px solid #2a2a4a',
-      borderRadius: '8px',
-      padding: '12px 16px',
-      fontSize: '11px',
-      fontFamily: 'monospace',
-      color: '#7c7cff',
-      lineHeight: 1.8,
-    },
-  };
-
   return (
-    <section id="inicio" style={estilos.seccion}>
-      <div style={estilos.contenido}>
-        <p style={estilos.etiqueta}>Computer Engineering</p>
-        <h1 style={estilos.titulo}>
-          Danna Montece,
-          <span style={estilos.tituloRosa}>
-            Ingeniera en<br />Computación
-          </span>
-        </h1>
-        <p style={estilos.subtitulo}>Estudiante de Ingeniería en Computación</p>
-        <p style={estilos.descripcion}>
-          Apasionada por la tecnología y el desarrollo de soluciones innovadoras.
-          Especializada en la creación de software educativo y aplicaciones web modernas
-          con React y JavaScript.
-        </p>
-        <div style={estilos.tags}>
-          {['JavaScript & React', 'Git', 'SQL'].map(tag => (
-            <span key={tag} style={estilos.tag}>
-              <span style={estilos.tagDot}></span>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div style={estilos.botones}>
-          <a href="https://github.com/Danna0327" target="_blank" rel="noreferrer">
-            <button style={estilos.botonPrimario}>Ver GitHub</button>
-          </a>
-          <a href="#contacto">
-            <button style={estilos.botonSecundario}>Contáctame</button>
-          </a>
-        </div>
-      </div>
+    <section style={{ position: 'relative', padding: '80px 5% 120px', maxWidth: '1280px', margin: '0 auto' }}>
 
-      <div style={{ position: 'relative' }}>
-        <div style={estilos.imagenWrapper}>
-          <img src={Perfil} alt="Danna Montece" style={estilos.imagen} />
+      {/* Glow blob */}
+      <div style={{
+        position: 'absolute', top: 0, right: 0, zIndex: -1,
+        width: '500px', height: '500px',
+        background: 'rgba(255,0,128,0.05)',
+        filter: 'blur(120px)', borderRadius: '50%',
+      }}></div>
+
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
+
+        {/* Left content */}
+        <div style={{ flex: 1, minWidth: '300px', display: 'flex', flexDirection: 'column', gap: '28px' }}>
+
+          <div>
+            <span style={{
+              display: 'inline-block', padding: '4px 12px',
+              fontSize: '11px', fontWeight: '800', letterSpacing: '3px',
+              textTransform: 'uppercase', color: '#ff0080',
+              background: 'rgba(255,0,128,0.1)', borderRadius: '6px',
+              marginBottom: '20px',
+            }}>Computer Engineering</span>
+
+            <h1 style={{ fontSize: '3.5rem', fontWeight: '900', lineHeight: 1.1, letterSpacing: '-1px' }}>
+              Danna Montece,
+              <span className="neon-glow" style={{ color: '#ff0080', display: 'block' }}>
+                Ingeniera en<br />Computación
+              </span>
+            </h1>
+          </div>
+
+          <p style={{ color: '#94a3b8', lineHeight: 1.8, fontSize: '0.95rem', maxWidth: '480px' }}>
+            Estudiante de Ingeniería en Computación enfocada en el desarrollo de soluciones tecnológicas innovadoras.
+            Especializada en la creación de software educativo y aplicaciones web modernas.
+          </p>
+
+          {/* Tags */}
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            {['JavaScript & React', 'Git', 'SQL'].map(tag => (
+              <span key={tag} style={{
+                border: '1px solid #334155', padding: '5px 14px',
+                borderRadius: '999px', fontSize: '12px', color: '#94a3b8',
+                display: 'flex', alignItems: 'center', gap: '6px',
+              }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ff0080', display: 'inline-block' }}></span>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <a href="#proyectos">
+              <button className="pulse-animation" style={{
+                background: '#ff0080', color: '#101e22',
+                border: 'none', padding: '13px 30px', borderRadius: '8px',
+                fontWeight: '800', fontSize: '0.9rem', cursor: 'pointer',
+                fontFamily: 'Inter, sans-serif',
+              }}>Ver Proyectos</button>
+            </a>
+            <a href="#contacto">
+              <button style={{
+                background: 'transparent', color: '#f1f5f9',
+                border: '1px solid #334155', padding: '13px 30px', borderRadius: '8px',
+                fontSize: '0.9rem', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+                fontWeight: '600',
+              }}>Contact Me</button>
+            </a>
+          </div>
         </div>
-        <div style={estilos.codigoCard}>
-          <div><span style={{color:'#ff2d78'}}>const</span> engineer = {'{'}</div>
-          <div>&nbsp;&nbsp;name: <span style={{color:'#a8ff78'}}>"Danna Montece"</span>,</div>
-          <div>&nbsp;&nbsp;role: <span style={{color:'#a8ff78'}}>"Ing. Computación"</span></div>
-          <div>{'}'}</div>
+
+        {/* Right - Photo */}
+        <div style={{ position: 'relative', flexShrink: 0 }}>
+          <div style={{
+            width: '300px', height: '360px', borderRadius: '16px',
+            overflow: 'hidden', border: '2px solid #ff0080',
+            boxShadow: '0 0 30px rgba(255,0,128,0.3)',
+          }}>
+            <img src={Perfil} alt="Danna Montece" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+
+          {/* Code card */}
+          <div style={{
+            position: 'absolute', bottom: '-24px', left: '-40px',
+            background: '#0f172a', border: '1px solid #1e293b',
+            borderRadius: '10px', padding: '14px 18px',
+            fontSize: '11px', fontFamily: 'monospace', lineHeight: 1.9,
+            boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+          }}>
+            <div><span style={{ color: '#ff0080' }}>const</span> <span style={{ color: '#7dd3fc' }}>engineer</span> = {'{'}</div>
+            <div>&nbsp;&nbsp;name: <span style={{ color: '#86efac' }}>"Danna Montece"</span>,</div>
+            <div>&nbsp;&nbsp;role: <span style={{ color: '#86efac' }}>"Ing. Computación"</span></div>
+            <div>{'}'}</div>
+          </div>
         </div>
+
       </div>
     </section>
   );

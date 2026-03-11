@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #101e22;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-link {
-  color: #61dafb;
+/* Grid pattern background */
+.grid-pattern {
+  background-image: radial-gradient(circle, #ff008022 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Neon glow text */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.5), 0 0 20px rgba(255, 0, 128, 0.3);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(255,0,128,0.4), 0 0 10px rgba(255,0,128,0.2); }
+  50% { box-shadow: 0 0 20px rgba(255,0,128,0.7), 0 0 30px rgba(255,0,128,0.4); }
+  100% { box-shadow: 0 0 5px rgba(255,0,128,0.4), 0 0 10px rgba(255,0,128,0.2); }
+}
+
+.pulse-animation {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 0, 128, 0.3);
 }

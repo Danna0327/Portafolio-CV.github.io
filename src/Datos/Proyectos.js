@@ -1,141 +1,136 @@
-import React, { useState, useEffect } from 'react';
-import TarjetaProyecto from './TarjetaProyecto';
+import React, { useState } from 'react';
+import portafolio from '../Recursos/Imagenes-Proyectos/Portafolio.png';
+import mathspin from '../Recursos/Imagenes-Proyectos/mathspin.png';
+import proyectoWeb from '../Recursos/Imagenes-Proyectos/proyecto-web.png';
 
-function Proyectos() {
-  // 1. Estados: repos = lista de repos, cargando = si está esperando, error = si falló
-  const [repos, setRepos] = useState([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState(null);
+const proyectos = [
+  {
+    id: 1,
+    titulo: 'MathSpin',
+    descripcion: 'Software educativo diseñado para facilitar el aprendizaje de las matemáticas de forma interactiva y dinámica.',
+    imagen: mathspin,
+    tags: ['JavaScript', 'Educación'],
+    github: 'https://github.com/Danna0327',
+    demo: '#',
+  },
+  {
+    id: 2,
+    titulo: 'AbastoGest',
+    descripcion: 'Sistema de gestión web diseñado para el negocio familiar de abarrotes.',
+    imagen: proyectoWeb,
+    tags: ['React', 'TIC'],
+    github: 'https://github.com/Danna0327',
+    demo: '#',
+  },
+  {
+    id: 3,
+    titulo: 'Portafolio React',
+    descripcion: 'Sitio web personal desarrollado con React para mostrar mi trayectoria, habilidades y proyectos en el campo de la computación.',
+    imagen: portafolio,
+    tags: ['React', 'Tailwind'],
+    github: 'https://github.com/Danna0327',
+    demo: '#',
+  },
+];
 
-  // 2. useEffect: se ejecuta una sola vez cuando el componente carga
-  useEffect(() => {
-    // 3. fetch llama a la API de GitHub con tu usuario
-    fetch('https://api.github.com/users/Danna0327/repos?sort=updated&per_page=6')
-      .then(respuesta => {
-        // 4. Verificar que la respuesta fue exitosa
-        if (!respuesta.ok) {
-          throw new Error('No se pudo conectar con GitHub');
-        }
-        // 5. Convertir la respuesta a JSON
-        return respuesta.json();
-      })
-      .then(datos => {
-        // 6. Guardar los repos en el estado
-        setRepos(datos);
-        setCargando(false);
-      })
-      .catch(err => {
-        // 7. Si algo falla, guardar el error
-        setError(err.message);
-        setCargando(false);
-      });
-  }, []); // El [] significa que solo se ejecuta una vez
-
-  const estilos = {
-    seccion: {
-      padding: '80px 8%',
-      background: '#111111',
-    },
-    encabezado: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: '40px',
-    },
-    titulo: {
-      fontSize: '2rem',
-      fontWeight: '800',
-      color: '#ffffff',
-      borderLeft: '3px solid #ff2d78',
-      paddingLeft: '14px',
-    },
-    enlaceGithub: {
-      color: '#ff2d78',
-      fontSize: '0.8rem',
-      border: '1px solid #ff2d78',
-      padding: '6px 14px',
-      borderRadius: '4px',
-      letterSpacing: '1px',
-      textTransform: 'uppercase',
-      textDecoration: 'none',
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '24px',
-    },
-    // Estado: cargando
-    cargandoBox: {
-      gridColumn: '1 / -1',
-      textAlign: 'center',
-      padding: '60px',
-      color: '#666',
-    },
-    spinner: {
-      width: '40px',
-      height: '40px',
-      border: '3px solid #222',
-      borderTop: '3px solid #ff2d78',
-      borderRadius: '50%',
-      margin: '0 auto 16px',
-      animation: 'girar 0.8s linear infinite',
-    },
-    // Estado: error
-    errorBox: {
-      gridColumn: '1 / -1',
-      textAlign: 'center',
-      padding: '40px',
-      color: '#ff2d78',
-      background: '#1a0a0e',
-      borderRadius: '12px',
-      border: '1px solid #ff2d7833',
-    },
-  };
+function TarjetaProyecto({ proyecto }) {
+  const [hover, setHover] = useState(false);
 
   return (
-    <section id="proyectos" style={estilos.seccion}>
-      {/* Animación del spinner */}
-      <style>{`
-        @keyframes girar {
-          to { transform: rotate(360deg); }
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        display: 'flex', flexDirection: 'column',
+        background: '#101e22',
+        border: `1px solid ${hover ? '#ff0080' : '#1e293b'}`,
+        borderRadius: '12px', overflow: 'hidden',
+        transition: 'all 0.3s ease',
+        transform: hover ? 'scale(1.02)' : 'scale(1)',
+        boxShadow: hover ? '0 0 25px rgba(255,0,128,0.3)' : 'none',
+      }}
+    >
+      {/* Image */}
+      <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', background: '#0f172a' }}>
+        <div style={{
+          position: 'absolute', inset: 0, zIndex: 1,
+          background: 'linear-gradient(to top, #101e22, transparent)',
+        }}></div>
+        {proyecto.imagen
+          ? <img src={proyecto.imagen} alt={proyecto.titulo} style={{
+              width: '100%', height: '100%', objectFit: 'cover',
+              transform: hover ? 'scale(1.1)' : 'scale(1)',
+              transition: 'transform 0.5s ease',
+            }} />
+          : <div style={{ width: '100%', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span className="material-symbols-outlined" style={{ fontSize: '48px', color: '#1e293b' }}>computer</span>
+            </div>
         }
-      `}</style>
-
-      <div style={estilos.encabezado}>
-        <h2 style={estilos.titulo}>Proyectos Seleccionados</h2>
-        <a
-          href="https://github.com/Danna0327"
-          target="_blank"
-          rel="noreferrer"
-          style={estilos.enlaceGithub}
-        >
-          Ver todos los repos →
-        </a>
       </div>
 
-      <div style={estilos.grid}>
-        {/* Si está cargando, muestra spinner */}
-        {cargando && (
-          <div style={estilos.cargandoBox}>
-            <div style={estilos.spinner}></div>
-            <p>Cargando proyectos desde GitHub...</p>
-          </div>
-        )}
+      {/* Content */}
+      <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
+          {proyecto.tags.map(tag => (
+            <span key={tag} style={{
+              background: '#1e293b', padding: '3px 10px', borderRadius: '4px',
+              fontSize: '10px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: '#94a3b8',
+            }}>{tag}</span>
+          ))}
+        </div>
 
-        {/* Si hubo error, muestra mensaje */}
-        {error && (
-          <div style={estilos.errorBox}>
-            <p>⚠️ {error}</p>
-            <p style={{ color: '#888', fontSize: '0.85rem', marginTop: '8px' }}>
-              Verifica tu conexión o intenta más tarde.
-            </p>
-          </div>
-        )}
+        <h3 style={{
+          fontWeight: '800', fontSize: '1.1rem', marginBottom: '10px',
+          color: hover ? '#ff0080' : '#f1f5f9', transition: 'color 0.2s',
+        }}>{proyecto.titulo}</h3>
 
-        {/* Si cargó bien, muestra los repos */}
-        {!cargando && !error && repos.map(repo => (
-          <TarjetaProyecto key={repo.id} repo={repo} />
-        ))}
+        <p style={{ color: '#64748b', fontSize: '0.83rem', lineHeight: 1.7, marginBottom: '20px', flex: 1 }}>
+          {proyecto.descripcion}
+        </p>
+
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <a href={proyecto.github} target="_blank" rel="noreferrer" style={{
+            flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+            height: '40px', background: '#1e293b', borderRadius: '6px',
+            color: '#f1f5f9', fontSize: '0.78rem', fontWeight: '700', textDecoration: 'none',
+            transition: 'background 0.2s',
+          }}>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>code</span> GitHub
+          </a>
+          <a href={proyecto.demo} style={{
+            flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
+            height: '40px', border: '1px solid #334155', borderRadius: '6px',
+            color: '#f1f5f9', fontSize: '0.78rem', fontWeight: '700', textDecoration: 'none',
+          }}>
+            Detalles
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Proyectos() {
+  return (
+    <section id="proyectos" style={{ padding: '80px 5%' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '48px' }}>
+          <div>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: '900', letterSpacing: '-0.5px', marginBottom: '8px' }}>Proyectos Seleccionados</h2>
+            <div style={{ height: '4px', width: '80px', background: '#ff0080', borderRadius: '2px' }}></div>
+          </div>
+          <a href="https://github.com/Danna0327" target="_blank" rel="noreferrer" className="pulse-animation" style={{
+            color: '#ff0080', fontSize: '0.8rem', fontWeight: '700',
+            display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none',
+          }}>
+            VER TODOS LOS REPOS EN GITHUB
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
+          </a>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          {proyectos.map(p => <TarjetaProyecto key={p.id} proyecto={p} />)}
+        </div>
       </div>
     </section>
   );

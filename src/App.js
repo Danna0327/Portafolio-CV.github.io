@@ -8,13 +8,17 @@ import Contacto from './Componentes/Contacto';
 
 function App() {
   return (
-    <div className="App">
-      <BarraNavegacion />
-      <Inicio />
-      <SobreMi />
-      <Proyectos />
-      <Habilidades />
-      <Contacto />
+    <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden', background: '#101e22' }}>
+      {/* Grid pattern background */}
+      <div className="grid-pattern" style={{ position: 'fixed', inset: 0, opacity: 0.2, pointerEvents: 'none', zIndex: 0 }}></div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <BarraNavegacion />
+        <Inicio />
+        <SobreMi />
+        <Proyectos />
+        <Habilidades />
+        <Contacto />
+      </div>
     </div>
   );
 }

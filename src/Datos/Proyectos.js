@@ -10,7 +10,7 @@ const proyectos = [
     descripcion: 'Software educativo diseñado para facilitar el aprendizaje de las matemáticas de forma interactiva y dinámica.',
     imagen: mathspin,
     tags: ['JavaScript', 'Educación'],
-    github: 'https://github.com/Danna0327',
+    github: 'https://github.com/Danna0327/mathspin',
     demo: '#',
   },
   {
@@ -19,7 +19,7 @@ const proyectos = [
     descripcion: 'Sistema de gestión web diseñado para el negocio familiar de abarrotes.',
     imagen: proyectoWeb,
     tags: ['React', 'TIC'],
-    github: 'https://github.com/Danna0327',
+    github: 'https://github.com/Danna0327/abastosgest',
     demo: '#',
   },
   {
@@ -28,7 +28,7 @@ const proyectos = [
     descripcion: 'Sitio web personal desarrollado con React para mostrar mi trayectoria, habilidades y proyectos en el campo de la computación.',
     imagen: portafolio,
     tags: ['React', 'Tailwind'],
-    github: 'https://github.com/Danna0327',
+    github: 'https://github.com/Danna0327/Portafolio-CV.github.io',
     demo: '#',
   },
 ];

@@ -2,7 +2,7 @@
 
 > Sitio web personal desarrollado con **React** para mostrar mi trayectoria, habilidades y proyectos como estudiante de Ingeniería en Computación.
 
-🔗 **Demo en vivo:** [danna-montece-portafolio.netlify.app/](https://danna-montece-portafolio.netlify.app/)  
+🔗 **Demo en vivo:** [portafolio-cv-2026.dmontece.workers.dev/](https://portafolio-cv-2026.dmontece.workers.dev/)  
 📁 **Repositorio:** [github.com/Danna0327/Portafolio-CV.github.io](https://github.com/Danna0327/Portafolio-CV.github.io)
 
 ---
